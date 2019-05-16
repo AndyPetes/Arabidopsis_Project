@@ -1,4 +1,19 @@
-#Generates an output compatible with EST-SFS
+#Prior Steps on a Linux HPC:
+#tabix -p vcf 1001genomes_snp-short-indel_only_ACGTN.vcf.gz
+#bcftools +fill-tags 1001genomes_snp-short-indel_only_ACGTN.vcf.gz -- -t AC,AF,AN > Updated1001vcf
+#awk '{print $1,$2,$4,$5,$8'} Updated1001.vcf > Updated1001.txt
+#Download MAF alignments
+
+
+#Usage: Generate Nucleotide Counts based of Common Ancestors based on Alignments for Ancestral Allle Inference  
+
+#for sample in *maf; 
+#do 
+#       python MAF.Arabidopsis.py Updated1001.txt $sample > $sample.txt; 
+#done
+
+
+#This example compares the Thaliana to the Halleri Species
 #sys.argv[1] = /data4/apeters/Thaliana/1001Updated.txt
 #sys.argv[2] = MAF File
 
