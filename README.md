@@ -8,4 +8,4 @@ bcftools +fill-tags 1001genomes_snp-short-indel_only_ACGTN.vcf.gz -- -t AC,AF,AN
 
 awk '{print $1,$2,$4,$5,$8'} Updated1001.vcf > Updated1001.txt
 
-Download MAF alignments
+Download MAF alignments from Plant Ensembl
