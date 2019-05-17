@@ -9,13 +9,14 @@
 
 #for sample in *maf; 
 #do 
-#       python MAF.Arabidopsis.py Updated1001.txt $sample > $sample.txt; 
+#       python MAF.Arabidopsis.py Updated1001.txt $sample "lyrata" > $sample.txt; 
 #done
 
 
 #This example compares the Thaliana to the Halleri Species
 #sys.argv[1] = /data4/apeters/Thaliana/1001Updated.txt
 #sys.argv[2] = MAF File
+#sys.argv[3] = Species name in MAF file (i.e. "lyrata", "halleri", "tauschii")
 
 import sys
 
@@ -46,7 +47,7 @@ with open(sys.argv[2],"r") as IN:
                     fields = line.strip("\n").split(" ")
                     Species = fields[1]
                     Sequence = fields[-1]
-                    if "halleri" in Species:
+                    if sys.argv[3] in Species:
                         Lyrata_Sequence.append(Sequence)
                     if "thaliana" in Species:
                         Thaliana_Sequence.append(Sequence)
