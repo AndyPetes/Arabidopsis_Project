@@ -23,3 +23,9 @@ sort -k 1 Thaliana.txt > Thaliana.sort.txt
 #Thaliana Data = Output from Loc_Ancestral.py
 
 python Transform.EST.py EST.AllSpecies.sort.txt EST.Thaliana.sort.txt > EST.Final.Lyrata.txt
+
+cut -d, -f1 --complement EST.198.Thaliana.sort.txt > EST.198.Thaliana.NoLoc.sort.txt
+cut -d, -f1 --complement EST.Final.Lyrata.txt > EST.Final.Lyrata.NoLoc.txt 
+cut -d, -f1 --complement EST.Final.Halleri.txt > EST.Final.Halleri.NoLoc.txt 
+
+paste EST.198.Thaliana.NoLoc.sort.txt EST.Final.Lyrata.NoLoc.txt EST.Final.Halleri.NoLoc.txt > EST.Input
