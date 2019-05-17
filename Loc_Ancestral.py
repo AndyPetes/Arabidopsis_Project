@@ -1,3 +1,12 @@
+#Description: This takes Arabidopsis VCF Data and outputs it in a readable
+#format by the EST program. However, the maximum number of alleles the 
+#program can handle is 200, and therefore when alleles exceed a n=198
+#then the allele counts are counted as fractions of 198. n=198 was chosen
+#because this is the largest number by which the total allele count does
+#not exceed 200 after rounding
+
+#Usage:  python Loc_Ancestral.py Updated1001.txt > EST_Input/EST.198.Thaliana.txt
+
 import sys
 
 with open(sys.argv[1],"r") as IN:
