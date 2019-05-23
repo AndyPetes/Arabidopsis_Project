@@ -31,15 +31,9 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 
 ***
 
-### Authors
+### Contributors
 
 * **Andrew Peters**
 * **Cathal Seoighe**
-
-***
-
-### License
-
-This project is licensed  - see the [LICENSE](LICENSE) file for details
 
 ***
