@@ -1,4 +1,5 @@
-## Arabidopsis_Project - Infer Arabidopsis Ancestral Alleles
+## Arabidopsis_Project
+### Infer Arabidopsis Ancestral Alleles
 
 
 This directory contains python scripts and bash scripts that demonstrate how to manipulate plant
@@ -16,7 +17,7 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 
 ***
 
-### Protocol - Python - Scripts
+### Protocol - Python Scripts
 
 * [Loc_Ancestral.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Loc_Ancestral.py) takes Arabidopsis VCF Data and outputs it in a readable format for the EST program.
 * [MAF.Arabidopsis.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/MAF.Arabidopsis.py) generates nucleotide counts based on alignments (MAF files) between thaliana and an outgroup species.
