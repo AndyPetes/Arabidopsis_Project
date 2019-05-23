@@ -15,6 +15,13 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 
 ***
 
+### Sample Files
+
+* [Head.Updated1001.txt](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Head.Updated1001.txt) is a sample text file (first 200 lines) of the "Updated1001.txt" file used for thaliana analysis. Details of how this is created is present in [Thaliana_MAF.sh](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Thaliana_MAF.sh)
+
+
+***
+
 ### Protocol - Python Scripts
 
 * [Loc_Ancestral.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Loc_Ancestral.py) takes Arabidopsis VCF Data and outputs it in a readable format for the EST program.
