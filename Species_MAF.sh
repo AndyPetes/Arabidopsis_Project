@@ -16,7 +16,8 @@
 #$ -v PYTHONPATH
 #$ -S /bin/bash
 
-species_name='P_persica'
+#Enter sample species name here
+species_name='Lyrata'
 
 for species in $species_name
 do
