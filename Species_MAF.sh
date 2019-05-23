@@ -33,7 +33,7 @@ for sample in *maf;
 
 do 
        #Perform python script on all MAF files and output them to a new directory labelled "EST_Input"
-       python Loc_Ancestral.py <path_to>/Updated1001.txt $sample "lyrata" > EST_Input/$sample.txt; 
+       python MAF.Arabidopsis.py <path_to>/Updated1001.txt $sample "lyrata" > EST_Input/$sample.txt; 
 done
 
 #Enter created directory
