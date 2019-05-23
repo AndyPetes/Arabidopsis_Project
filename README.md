@@ -2,7 +2,7 @@
 ### Infer Arabidopsis Ancestral Alleles
 
 
-This directory contains python scripts and bash scripts that demonstrate how to manipulate plant ([Arabidopsis thaliana 1001 Genomes Data])(https://1001genomes.org/index.html), and it's outgroup's (lyrata, helleri, etc.) data,  using Multiple Alignment Format (MAF) files, located at [Plant Ensembl](http://plants.ensembl.org/index.html), in order to infer ancestral alleles for the Arabidopsis thaliana.
+This directory contains python scripts and bash scripts that demonstrate how to manipulate plant [Arabidopsis thaliana 1001 Genomes Data](https://1001genomes.org/index.html), and it's outgroup's (lyrata, helleri, etc.) data, using Multiple Alignment Format (MAF) files, located at [Plant Ensembl](http://plants.ensembl.org/index.html), in order to infer ancestral alleles for the Arabidopsis thaliana species.
 
 ***
 
