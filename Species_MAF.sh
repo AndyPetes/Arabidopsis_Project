@@ -51,5 +51,6 @@ python /data4/apeters/Arabidopsis/Thaliana/EST_Input/Transform.EST.py EST.All.$s
 #Reomove the location co-ordinates for EST package Input
 cut -d, -f1 --complement EST.Final.$species.txt > EST.Final.$species.NoLoc.txt
 
+#Then paste the species you require, with always Thaliana first i.e.
+#paste EST.198.Thaliana.NoLoc.sort.txt EST.Final.Lyrata.NoLoc.txt EST.Final.Halleri.NoLoc.txt EST.Final.C_sativus.NoLoc.txt > EST.Input
 
-echo All done
