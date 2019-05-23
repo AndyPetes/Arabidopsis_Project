@@ -28,3 +28,8 @@ bcftools +fill-tags 1001genomes_snp-short-indel_only_ACGTN.vcf.gz -- -t AC,AF,AN
 #Print required information for downstream analysis to a different file so that it is a lighter file
 awk '{print $1,$2,$4,$5,$8'} Updated1001.vcf > Updated1001.txt
 
+#Create aDirectory
+mkdir EST_Input
+
+#Put the data into the neccessary format for EST Input
+python Loc_Ancestral.py Updated1001.txt > EST_Input/EST.198.Thaliana.txt
