@@ -1,4 +1,9 @@
 #Usage:  python 3Outgroup.py Updated1001.txt AllThLyHaPe.txt EST.Loc.Thal.Lyr.Hall.Per.txt > AlleleInference.output
+#Inpur Files:
+#sys.argv[1] = Updated1001.txt
+#sys.argv[2] = AllThLyHaPe.txt
+#sys.argv[3] = AllThLyHaPe.txt EST.Loc.Thal.Lyr.Hall.Per.txt
+
 
 #import sys
 Dic_Ref = {}
@@ -35,9 +40,9 @@ with open(sys.argv[3],"r") as IN:
                 Outgroup1 = fields[-3]
                 Outgroup2 = fields[-2]
                 Outgroup3 = fields[-1]
-                if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0":
-                    continue
                 Loc = fields[0]
+                if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0":
+                    print(Loc + "\t" + "NA")
                 Probability = Allele_Prob[Loc]
                 if float(Probability) >= 0.5:
                         print(Loc + "\t" + Dic_Ref[Loc])
