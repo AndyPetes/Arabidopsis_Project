@@ -1,10 +1,12 @@
+#Usage:  python 3Outgroup.py Updated1001.txt AllThLyHaPe.txt EST.Loc.Thal.Lyr.Hall.Per.txt > AlleleInference.output
+
 #import sys
 Dic_Ref = {}
 Dic_Alt = {}
 
 
 #Create Dictionary from 1001.vcf file
-with open("/home/andrewp94/Downloads/Head1001.txt","r") as IN:
+with open(sys.argv[1],"r") as IN:
         for line in IN:
                 if line.startswith("#"):
                         continue
@@ -19,7 +21,7 @@ with open("/home/andrewp94/Downloads/Head1001.txt","r") as IN:
                     
 #Create dictopnary of the allele probailities
 Allele_Prob = {}
-with open("/home/andrewp94/Downloads/practice.txt","r") as IN:
+with open(sys.argv[2],"r") as IN:
         for line in IN:
                 fields = line.strip("\n").split(" ")
                 Location = fields[0]
@@ -27,7 +29,7 @@ with open("/home/andrewp94/Downloads/practice.txt","r") as IN:
                 Allele_Prob[Location] = Probability
 
 #Create output of Ancestral Alleles
-with open("/home/andrewp94/Downloads/EST.txt","r") as IN:
+with open(sys.argv[3],"r") as IN:
         for line in IN:
                 fields = line.strip("\n").split(" ")
                 Outgroup1 = fields[-3]
