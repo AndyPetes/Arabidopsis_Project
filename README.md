@@ -32,7 +32,7 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 ***
 
 ### Protocol - Bash Scripts
-
+#### Implement Bash Scripts in the Following order:
 * [Thaliana_MAF.sh](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Thaliana_MAF.sh) details how to manipulate the Thaliana data into an EST readible format.
 * [Species_MAF.sh](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Species_MAF.sh) details how to manipulate the other Species data into an EST readible format.
 
