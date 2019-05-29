@@ -1,4 +1,4 @@
-#Usage:  python 3Outgroup.py Updated1001.txt AllThLyHaPe.txt EST.Loc.Thal.Lyr.Hall.Per.txt 3 > AlleleInference.output
+#Usage:  python Outgroup.py Updated1001.txt AllThLyHaPe.txt EST.Loc.Thal.Lyr.Hall.Per.txt 3 > AlleleInference.output
 #Inpur Files:
 #sys.argv[1] = Updated1001.txt
 #sys.argv[2] = AllThLyHaPe.txt
