@@ -2,7 +2,7 @@
 #Inpur Files:
 #sys.argv[1] = Updated1001.txt
 #sys.argv[2] = AllThLyHaPe.txt
-#sys.argv[3] = AllThLyHaPe.txt EST.Loc.Thal.Lyr.Hall.Per.txt
+#sys.argv[3] = EST.Loc.Thal.Lyr.Hall.Per.txt
 #sys.argv[4] = Number of Outgroups (i.e. 3 or 2)
 
 
