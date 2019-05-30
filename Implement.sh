@@ -46,6 +46,41 @@ paste ../AllLocations.txt AllThLyHaSa.txt > AllLocThLyHaSa.txt
 #less than 0.5 outputs a the alternative allele nucleotide as well as the string "Derived".
 python Outgroup.py Updated1001.txt ThLyHaNa/AllLocThLyHaSa.txt ../EST.Loc.Input 3 > ThLyHaSa.Allele.Output
 
+#Extract the Derived entries
+#grep "Derived" ThLyHaSa.Allele.Output > ThLyHaSa.Allele.Derived.Output
+
+#Extract the Ancestral entries
+#grep "Ancestral" ThLyHaSa.Allele.Output > ThLyHaSa.Allele.Ancestral.Output
+
+#Then Download the indiviual Strains from 1001 Arabidopsis Genomes
+#wget /data/GMI-MPI/releases/v3.1/intersection_snp_short_indel_vcf/
+
+#Annotate the VCF files
+samples=`ls *vcf.gz*`
+
+for sample in $samples
+do
+
+/home/apeters/anaconda3/bin/tabix $sample
+/home/apeters/anaconda3/bin/bcftools +fill-tags $sample -- -t AC,AF,AN > Updated.$sample
+
+done
+
+#Count number of derived and ancestral alleles in each inidiviudal filein accordance with 
+#the Lyrata-Halleri-Na ancestral probabilities
+samples=`ls *Updated*`
+
+for sample in $samples
+do
+
+python Ancestral_Count.py ThLyHaSa.Allele.Derived.Output ThLyHaSa.Allele.Ancestral.Output $sample > ThLyHaSa_Output/$sample.ThLyHaSa.output
+
+done
+
+
+
+
+
 
 
 
