@@ -8,11 +8,9 @@
 #sys.argv[4] = Number of Outgroups (i.e. 2 or 3)
 import sys
 
-Dic_Ref = {}
-Dic_Alt = {}
+Dic_Minor = {}
+Dic_Major = {}
 
-
-#Create Dictionary from 1001.vcf file
 with open(sys.argv[1],"r") as IN:
        	for line in IN:
                	if line.startswith("#"):
@@ -23,8 +21,14 @@ with open(sys.argv[1],"r") as IN:
                	Reference = fields[2]
                	Alternative = fields[3]
                	if len(Reference) == 1 and len(Alternative) == 1:
-                    Dic_Ref[Chromosome + "_" + Position] = Reference
-                    Dic_Alt[Chromosome + "_" + Position] = Alternative
+                    New_Fields = fields[4].split(";")
+                    Alt_Freq = float(New_Fields[2][3:])
+                    if Alt_Freq < 0.5:
+                       	Dic_Minor[Chromosome + "_" + Position] = Alternative
+                       	Dic_Major[Chromosome + "_" + Position] = Reference
+                    else:
+                       	Dic_Minor[Chromosome + "_" + Position] = Reference
+                       	Dic_Major[Chromosome + "_" + Position] = Alternative
 
 #Create Dictionary of Locations with Probabilities that the allele is ancestral
 Allele_Prob = {}
@@ -46,11 +50,11 @@ with open(sys.argv[3],"r") as IN:
                      Loc = fields[0]
                      Prob = Allele_Prob[Loc]
                      if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0":
-                          print(Loc + "\t" + "NA")
+                         print(Loc + "\t" + "NA")
                      elif float(Prob) >= 0.5:
-                          print(Loc + "\t" + Dic_Ref[Loc] + "\t" + "Ancestral")
+                         print(Loc + "\t" + Dic_Major[Loc] + "\t" + "Ancestral" + "\t" + Dic_Minor[Loc])
                      else:
-                          print(Loc + "\t" + Dic_Alt[Loc] + "\t" + "Derived")
+                         print(Loc + "\t" + Dic_Major[Loc] + "\t" + "Derived" + "\t" + Dic_Minor[Loc])
                 if sys.argv[4] == "3":
                      fields = line.strip("\n").split("\t")
                      Outgroup1 = fields[-3]
@@ -59,8 +63,8 @@ with open(sys.argv[3],"r") as IN:
                      Loc = fields[0]
                      Prob = Allele_Prob[Loc]
                      if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0":
-                          print(Loc + "\t" + "NA")
+                         print(Loc + "\t" + "NA")
                      elif float(Prob) >= 0.5:
-                          print(Loc + "\t" + Dic_Ref[Loc] + "\t" + "Ancestral")
+                         print(Loc + "\t" + Dic_Major[Loc] + "\t" + "Ancestral" + "\t" + Dic_Minor[Loc])
                      else:
-                          print(Loc + "\t" + Dic_Alt[Loc] + "\t" + "Derived")
+                         print(Loc + "\t" + Dic_Major[Loc] + "\t" + "Derived" + "\t" + Dic_Minor[Loc])
