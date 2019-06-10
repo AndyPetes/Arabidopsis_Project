@@ -79,11 +79,13 @@ with open("locations.txt","r") as IN:
                     if ThLyHall[Location] == ThLyHaSa[Location] and ThLyHall[Location] == ThLyHaNa[Location] and ThLyHall[Location] == ThLyHaPe[Location]:           
                         if ThLyHallOut[Location] == "No_Outgroup" and ThLyHaSaOut[Location] == "No_Outgroup" and ThLyHaNaOut[Location] == "No_Outgroup" and ThLyHaPeOut[Location] == "No_Outgroup":    
                                print("No_Outgroup" + "\t" + Location + "\t" + "same" + "\t" + ThLyHall[Location] + "\t" + ThLyHaSa[Location] + "\t" + ThLyHaNa[Location] + "\t" + ThLyHaPe[Location])
+                               #print("No_Outgroup" + "\t" + Location + "\t" + "NA" + "\t" + ThLyHall[Location] + "\t" + ThLyHaSa[Location] + "\t" + ThLyHaNa[Location] + "\t" + ThLyHaPe[Location])
                         else:
                                print("Outgroup" + "\t" + Location + "\t" + "same" + "\t" + ThLyHall[Location] + "\t" + ThLyHaSa[Location] + "\t" + ThLyHaNa[Location] + "\t" + ThLyHaPe[Location])                      
                     else:
                         if ThLyHallOut[Location] == "No_Outgroup" and ThLyHaSaOut[Location] == "No_Outgroup" and ThLyHaNaOut[Location] == "No_Outgroup" and ThLyHaPeOut[Location] == "No_Outgroup":
                                print("No_Outgroup" + "\t" + Location + "\t" + "different" + "\t" + ThLyHall[Location] + "\t" + ThLyHaSa[Location] + "\t" + ThLyHaNa[Location] + "\t" + ThLyHaPe[Location])
+                               #print("No_Outgroup" + "\t" + Location + "\t" + "NA" + "\t" + ThLyHall[Location] + "\t" + ThLyHaSa[Location] + "\t" + ThLyHaNa[Location] + "\t" + ThLyHaPe[Location])
                         else:
                                print("Outgroup" + "\t" + Location + "\t" + "different" + "\t" + ThLyHall[Location] + "\t" + ThLyHaSa[Location] + "\t" + ThLyHaNa[Location] + "\t" + ThLyHaPe[Location])
                                
