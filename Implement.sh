@@ -126,10 +126,10 @@ done
 #awk '{print $3}' AllSamplesAllSameLocations.txt > Der.txt
 
 #Create csv file with strain id and ancestral counts
-#paste Samplenames.txt Anc.txt | awk 'gsub("\t","s")' > AncestralCounts.txt
+#paste Samplenames.txt Anc.txt | awk 'gsub("\t",",")' > AncestralCounts.txt
 
 #Create csv file with strain id and derived counts
-#paste Samplenames.txt Der.txt | awk 'gsub("\t","s")' > DerivedCounts.txt
+#paste Samplenames.txt Der.txt | awk 'gsub("\t",",")' > DerivedCounts.txt
 
 #Then use the GWAS portal at https://gwas.gmi.oeaw.ac.at/ and follow the steps to use
 #Derived Counts as a quantatitive pheonotype for a GWAS
