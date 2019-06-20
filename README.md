@@ -31,7 +31,7 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 
 ### Protocol - Python Scripts
 * [Loc_Ancestral.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Loc_Ancestral.py) takes Arabidopsis VCF Data and outputs it in a readable format for the EST program.
-* [MAF.Arabidopsis.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/MAF.Arabidopsis.py) generates nucleotide counts based on alignments (MAF files) between thaliana and an outgroup species.
+* [MAF.Species.Tab.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/MAF.Species.Tab.py) generates nucleotide counts based on alignments (MAF files) between thaliana and an outgroup species.
 * [Transform.EST.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Transform.EST.py) generate nucleotide counts at all variant positions in the thaliana data, not just at the variant alignment positions, which was performed above.
 * [Outgroup.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Outgroup.py) details what positions are non-applicable, ancestral or dervived, dependent on the ancestral allele probabilities outputted by the EST program.
 * [Ancestral_Count.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Ancestral_Count.py) counts number of derived and ancestral alleles in each inidiviudal file in accordance with the ancestral probabilities previously generated.
