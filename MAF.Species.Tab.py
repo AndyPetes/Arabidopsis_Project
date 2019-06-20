@@ -56,25 +56,32 @@ with open(sys.argv[2],"r") as IN:
                         Sequence = fields[-1]
                         #Allocate Position
                         Position = fields[2]
-                        count = 0
+                        #Create empty sequence string
                         seq=''
-                        #Calculate length of Alignment
-                        #or i in range(len(Sequence)):
+                        #Loop through each nucleotide of the sequence
                         for nucleotide in Sequence:
+                            #Keep appending Nucleotide to the "seq"
                             seq += nucleotide
+                            #Create a variable for lengrth of "seq"
                             Seq_Len = len(seq) - 1
+                            #Count number of gaps with each iteration as they gradually appear in "seq"
                             Gap = seq.count("-")
+                            #Generate location of nucleotide if no gaps were present
                             NoGap = Seq_Len - int(Gap)
+                            #Get genomi co-ordinate of nucleotide without gaps present
                             New_Location = int(Position) + int(NoGap)
+                            #This is the last nucleotide in the incresing "seq" string as it loops through
                             NoGapNuc = seq[-1].upper()
+                            #Skip Nucleotide if they contain gaps
                             if NoGapNuc == "-":
                                 continue
+                            #Add chromosome location to genomic position to look up in earlier created dictionary
                             Site = str(chrom) + str(New_Location)
-                            #print(NoGapNuc + ":" + str(New_Location))
+                            #Proceed if the genomic location is in the initial dictionary
                             if str(Site) in Dic:
                                     #Retrieve Reference SNP from 1001 Arabidopsis Database
                                     VCF_Base = Dic[str(Site)]
-                                    #If the Refernce Base is same as Alignment Proceed
+                                    #If the Reference Base is same as Alignment Proceed
                                     if VCF_Base == NoGapNuc:
                                         #Get Complementary Base Pair in Lyrata
                                         Aligned_Lyrata_Base = Sequence_Dic[Sequence][len(seq) - 1].upper()
