@@ -44,8 +44,29 @@ species='Lyrata'
 
 #Concatentae all out files from the python script
 cat *txt* > EST.All.$species.txt
+
 #Sort the output based on genomic co-ordinate in Arabidopsis
 sort -k 1 EST.All.$species.txt > EST.All.$species.sort.txt
+
+#Print only all Duplicate Lines
+uniq -D EST.All.$species.sort.txt > Duplicated.Sites.txt
+
+#Print all non-duplicated Lines
+uniq -u EST.All.$species.sort.txt > NonDuplicated.Sites.txt
+
+#Extract lines from the duplicate file that are the same
+sort -u Duplicated.Sites.txt | awk 'NR==FNR{seen[$1]++;next}seen[$1]==1' - Duplicated.Sites.txt > outfile.txt
+
+#Extract one consensus line for each repitition
+uniq outfile.txt > consensus.txt
+
+#Add the Duplicate consensus file with the non-duplicate
+cat NonDuplicated.Sites.txt consensus.txt > AllNondups.$species.txt
+
+#Sort the output based on genomic co-ordinate in Arabidopsis
+sort -k 1 AllNondups.$species.txt > AllNondups.$species.sort.txt
+
+
 #Create an output at all co-ordinates in the thaliana data
 python /data4/apeters/Arabidopsis/Thaliana/EST_Input/Transform.EST.py EST.All.$species.sort.txt /data4/apeters/Arabidopsis/Thaliana/EST_Input/EST.198.Thaliana.sort.txt > EST.Final.$species.txt
 #Reomove the location co-ordinates for EST package Input
