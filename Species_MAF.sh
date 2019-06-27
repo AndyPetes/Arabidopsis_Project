@@ -67,10 +67,10 @@ cat NonDuplicated.Sites.txt consensus.txt > AllNondups.$species.txt
 sort -k 1 AllNondups.$species.txt > AllNondups.$species.sort.txt
 
 #Change the tab seperator to a comma
-awk 'gsub("\t",",")' EST.Final.C_Sativus.txt > EST.Final.$species.sep.txt
+awk 'gsub("\t",",")' AllNondups.$species.sort.txt > AllNondups.$species.sort.sep.txt
 
 #Create an output at all co-ordinates in the thaliana data
-python /data4/apeters/Arabidopsis/Thaliana/EST_Input/Transform.EST.py EST.All.$species.sort.sep.txt /data4/apeters/Arabidopsis/Thaliana/EST_Input/EST.198.Thaliana.sort.txt > EST.Final.$species.txt
+python /data4/apeters/Arabidopsis/Thaliana/EST_Input/Transform.EST.py AllNondups.$species.sort.sep.txt /data4/apeters/Arabidopsis/Thaliana/EST_Input/EST.198.Thaliana.sort.txt > EST.Final.$species.txt
 #Reomove the location co-ordinates for EST package Input
 cut -d, -f1 --complement EST.Final.$species.txt > EST.Final.$species.NoLoc.txt
 
