@@ -6,6 +6,7 @@
 #not exceed 200 after rounding
 
 #Usage:  python Loc_Ancestral.py Updated1001.txt > EST_Input/EST.198.Thaliana.txt
+###USE PYTHON 3 OR ABOVE
 
 import sys
 
