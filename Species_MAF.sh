@@ -49,7 +49,7 @@ cat *txt* > EST.All.$species.txt
 sort -k 1 EST.All.$species.txt > EST.All.$species.sort.txt
 
 #Get unique locations using a python script
-python get_uniq.py EST.All.Lyrata.sort.txt > unique.txt
+python get_uniq.py EST.All.$species.sort.txt > unique.txt
 
 #Write output in a more readable format
 python reformat.py unique.txt > unique.updated.txt
