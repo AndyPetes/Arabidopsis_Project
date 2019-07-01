@@ -48,20 +48,23 @@ cat *txt* > EST.All.$species.txt
 #Sort the output based on genomic co-ordinate in Arabidopsis
 sort -k 1 EST.All.$species.txt > EST.All.$species.sort.txt
 
-#Print only all Duplicate Lines
-uniq -D EST.All.$species.sort.txt > Duplicated.Sites.txt
+#Get unique locations using a python script
+python get_uniq.py EST.All.Lyrata.sort.txt > unique.txt
 
-#Print all non-duplicated Lines
-uniq -u EST.All.$species.sort.txt > NonDuplicated.Sites.txt
+#Write output in a more readable format
+python reformat.py unique.txt > unique.updated.txt
+
+#Extract non-unique entries using a further python script
+python reformat2.py unique.txt unique.updated.sort.txt EST.All.$species.sort.txt > nonunique.txt
 
 #Extract lines from the duplicate file that are the same
-sort -u Duplicated.Sites.txt | awk 'NR==FNR{seen[$1]++;next}seen[$1]==1' - Duplicated.Sites.txt > outfile.txt
+sort -u nonunique.txt | awk 'NR==FNR{seen[$1]++;next}seen[$1]==1' - nonunique.txt > outfile.txt
 
 #Extract one consensus line for each repitition
 uniq outfile.txt > consensus.txt
 
 #Add the Duplicate consensus file with the non-duplicate
-cat NonDuplicated.Sites.txt consensus.txt > AllNondups.$species.txt
+cat unique.updated.txt consensus.txt > AllNondups.$species.txt
 
 #Sort the output based on genomic co-ordinate in Arabidopsis
 sort -k 1 AllNondups.$species.txt > AllNondups.$species.sort.txt
