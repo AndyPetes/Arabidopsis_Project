@@ -55,7 +55,7 @@ python get_uniq.py EST.All.$species.sort.txt > unique.txt
 python reformat.py unique.txt > unique.updated.txt
 
 #Extract non-unique entries using a further python script
-python reformat2.py unique.txt unique.updated.sort.txt EST.All.$species.sort.txt > nonunique.txt
+python reformat2.py unique.txt EST.All.$species.sort.txt > nonunique.txt
 
 #Extract lines from the duplicate file that are the same
 sort -u nonunique.txt | awk 'NR==FNR{seen[$1]++;next}seen[$1]==1' - nonunique.txt > outfile.txt
