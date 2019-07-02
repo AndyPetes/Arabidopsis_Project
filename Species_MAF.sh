@@ -74,8 +74,8 @@ awk 'gsub("\t",",")' AllNondups.$species.sort.txt > AllNondups.$species.sort.sep
 
 #Create an output at all co-ordinates in the thaliana data
 python /data4/apeters/Arabidopsis/Thaliana/EST_Input/Transform.EST.py AllNondups.$species.sort.sep.txt /data4/apeters/Arabidopsis/Thaliana/EST_Input/EST.198.Thaliana.sort.txt > EST.Final.$species.txt
-#Reomove the location co-ordinates for EST package Input
-cut -d, -f1 --complement EST.Final.$species.txt > EST.Final.$species.NoLoc.txt
+#Remove the location co-ordinates for EST package Input
+awk '{print $1}' EST.Final.$species.txt | cut -d, -f1 --complement > EST.Final.$species.NoLoc.txt
 
 #Then paste the species you require, with always Thaliana first i.e.
 #paste EST.198.Thaliana.NoLoc.sort.txt EST.Final.Lyrata.NoLoc.txt EST.Final.Halleri.NoLoc.txt EST.Final.C_sativus.NoLoc.txt > EST.Input
