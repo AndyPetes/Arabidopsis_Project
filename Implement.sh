@@ -6,7 +6,7 @@
 
 #Split into 150 equally sized files due to segmentation faults in programme
 #Sample used = Thaliana, Lyrata, Halleri, C_sativus
-#split -l 71382.7 EST.Loc.Input ThLyHaSa
+#split -l 71382 EST.Loc.Input ThLyHaSa
 
 #Perform package on split files
 files=`ls *ThLyHaSa*`
