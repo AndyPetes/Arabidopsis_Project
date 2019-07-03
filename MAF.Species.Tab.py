@@ -60,17 +60,24 @@ with open(sys.argv[2],"r") as IN:
                         seq=''
                         #Calculate length of Alignment
                         for nucleotide in Sequence:
+                            #Add a nucleotide each time the algorithm loops through
                             seq += nucleotide
+                            #The Index of each nucleotide is the length of the sequence minus 1
                             Seq_Len = len(seq) - 1
+                            #Count each gap as they appear as the algorithm progresses
                             Gap = seq.count("-")
+                            #Caculates the indexed nucleotide without gaps
                             NoGap = Seq_Len - int(Gap)
+                            #Outputs the genomic position of the nucleotide before gap removal
                             New_Location = int(Position) + int(NoGap) + 1
+                            #Takes the last nucleotide and makes it upper case 
                             NoGapNuc = seq[-1].upper()
-                            #New_Pos = seq.index(NoGapNuc)
+                            #Prints all the nucelotides without gaps adjacent to each other
                             if NoGapNuc == "-":
                                 continue
+                            #Outputs the genomic position after gap removal
                             Site = str(chrom) + str(New_Location)
-                            #print(NoGapNuc + ":" + str(New_Location))
+                            #If this genomic position is in the dictionary
                             if str(Site) in Dic:
                                     #Retrieve Reference SNP from 1001 Arabidopsis Database
                                     VCF_Base = Dic[str(Site)]
