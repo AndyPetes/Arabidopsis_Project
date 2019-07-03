@@ -49,13 +49,13 @@ cat *txt* > EST.All.$species.txt
 sort -k 1 EST.All.$species.txt > EST.All.$species.sort.txt
 
 #Get unique locations using a python script
-python get_uniq.py EST.All.$species.sort.txt > unique.txt
+python /data4/apeters/Arabidopsis/get_uniq.py EST.All.$species.sort.txt > unique.txt
 
 #Write output in a more readable format
-python reformat.py unique.txt > unique.updated.txt
+python /data4/apeters/Arabidopsis/reformat.py unique.txt > unique.updated.txt
 
 #Extract non-unique entries using a further python script
-python reformat2.py unique.updated.txt EST.All.$species.sort.txt > nonunique.txt
+python /data4/apeters/Arabidopsis/reformat2.py unique.updated.txt EST.All.$species.sort.txt > nonunique.txt
 
 #Extract lines from the duplicate file that are the same
 sort -u nonunique.txt | awk 'NR==FNR{seen[$1]++;next}seen[$1]==1' - nonunique.txt > outfile.txt
@@ -74,6 +74,7 @@ awk 'gsub("\t",",")' AllNondups.$species.sort.txt > AllNondups.$species.sort.sep
 
 #Create an output at all co-ordinates in the thaliana data
 python /data4/apeters/Arabidopsis/Thaliana/EST_Input/Transform.EST.py AllNondups.$species.sort.sep.txt /data4/apeters/Arabidopsis/Thaliana/EST_Input/EST.198.Thaliana.sort.txt > EST.Final.$species.txt
+
 #Remove the location co-ordinates for EST package Input
 awk '{print $1}' EST.Final.$species.txt | cut -d, -f1 --complement > EST.Final.$species.NoLoc.txt
 
