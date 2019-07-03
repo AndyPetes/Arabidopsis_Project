@@ -38,7 +38,7 @@ with open(sys.argv[2],"r") as IN:
 
 Sequence_Dic = {Thaliana_Sequence[i]: Lyrata_Sequence[i] for i in range(len(Thaliana_Sequence))}  
 
-chromosome_number = ["1_","2_","3_","4_","5_"]
+chromosome_number = ["1_","2_","3_","4_","5_","Mt_","Pt_"]
 
 
 with open(sys.argv[2],"r") as IN:
@@ -56,42 +56,36 @@ with open(sys.argv[2],"r") as IN:
                         Sequence = fields[-1]
                         #Allocate Position
                         Position = fields[2]
-                        #Create empty sequence string
+                        count = 0
                         seq=''
-                        #Loop through each nucleotide of the sequence
+                        #Calculate length of Alignment
                         for nucleotide in Sequence:
-                            #Keep appending Nucleotide to the "seq"
                             seq += nucleotide
-                            #Create a variable for lengrth of "seq"
                             Seq_Len = len(seq) - 1
-                            #Count number of gaps with each iteration as they gradually appear in "seq"
                             Gap = seq.count("-")
-                            #Generate location of nucleotide if no gaps were present
                             NoGap = Seq_Len - int(Gap)
-                            #Get genomi co-ordinate of nucleotide without gaps present
-                            New_Location = int(Position) + int(NoGap)
-                            #This is the last nucleotide in the incresing "seq" string as it loops through
+                            New_Location = int(Position) + int(NoGap) + 1
                             NoGapNuc = seq[-1].upper()
-                            #Skip Nucleotide if they contain gaps
+                            #New_Pos = seq.index(NoGapNuc)
                             if NoGapNuc == "-":
                                 continue
-                            #Add chromosome location to genomic position to look up in earlier created dictionary
                             Site = str(chrom) + str(New_Location)
-                            #Proceed if the genomic location is in the initial dictionary
+                            #print(NoGapNuc + ":" + str(New_Location))
                             if str(Site) in Dic:
                                     #Retrieve Reference SNP from 1001 Arabidopsis Database
                                     VCF_Base = Dic[str(Site)]
-                                    #If the Reference Base is same as Alignment Proceed
+                                    #print(str(NoGapNuc) + "\t" + str(Site) + "\t" + str(VCF_Base)  + "\t" + str(seq[Seq_Len].upper()) + "\t" + Sequence_Dic[Sequence][Seq_Len].upper())
+                                    #If the Refernce Base is same as Alignment Proceed
                                     if VCF_Base == NoGapNuc:
-                                        #Get Complementary Base Pair in Lyrata
-                                        Aligned_Lyrata_Base = Sequence_Dic[Sequence][len(seq) - 1].upper()
-                                        if Aligned_Lyrata_Base == "A":
-                                            print(str(Site) + "\t" + "1,0,0,0")
-                                        if Aligned_Lyrata_Base == "C":
-                                            print(str(Site) + "\t" + "0,1,0,0")
-                                        if Aligned_Lyrata_Base == "G":
-                                            print(str(Site) + "\t" + "0,0,1,0")
-                                        if Aligned_Lyrata_Base == "T":
-                                            print(str(Site) + "\t" + "0,0,0,1")
-                                        if Aligned_Lyrata_Base == "-":
-                                            print(str(Site) + "\t" + "0,0,0,0")
+                                         #Get Complementary Base Pair in Lyrata
+                                         Aligned_Lyrata_Base = Sequence_Dic[Sequence][Seq_Len].upper()
+                                         if Aligned_Lyrata_Base == "A":
+                                             print(str(Site) + "\t" + "1,0,0,0")
+                                         if Aligned_Lyrata_Base == "C":
+                                             print(str(Site) + "\t" + "0,1,0,0")
+                                         if Aligned_Lyrata_Base == "G":
+                                             print(str(Site) + "\t" + "0,0,1,0")
+                                         if Aligned_Lyrata_Base == "T":
+                                             print(str(Site) + "\t" + "0,0,0,1")
+                                         if Aligned_Lyrata_Base == "-":
+                                             print(str(Site) + "\t" + "0,0,0,0")
