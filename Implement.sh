@@ -70,18 +70,16 @@ python Out_Estimate_State.py > NewAllLocations.txt
 #grep "Ancestral" NewAllLocations.same.txt > NewAllLocations.same.ancestral.txt
 
 ###########################################################################################################
-#Stats: Using All Locations: 10,707,413 in total
-#                            10,707,317 of these had the same alleles across the 4 samples (NewAllLocations.same.txt)
-#                            96 had different alleles across the samples
-#               Of the same: 10,579,290 are Ancestral and (NewAllLocations.same.ancestral.txt)     
-#                            128,027 are Derived (NewAllLocations.same.derived.txt)
+#Stats: Using All Locations: 10,707,430 in total
+#                            10,707,430 of these had the same alleles across the 4 samples (NewAllLocations.same.txt)
+#               Of the same: 10,105,460 are Ancestral and (NewAllLocations.same.ancestral.txt)     
+#                            601,970 are Derived (NewAllLocations.same.derived.txt)
 #
 
-#Stats: Using All Locations with at least 1 Outgroup: 2,200,002 in total
-#                            2,200,001 of these had the same alleles across the 4 samples (NewAllLocations.same.txt)
-#                            1 had different alleles across the samples
-#               Of the same: 2,122,202 are Ancestral and (NewAllLocations.same.ancestral.txt) 
-#                            128,027 are Derived (NewAllLocations.same.derived.txt)
+#Stats: Using All Locations with at least 1 Outgroup: 7,682,710 in total
+#                            7,682,710 of these had the same alleles across the 4 samples (Output.Outgroup.txt)
+#               Of the same: 7,110,609 are Ancestral and (Output.Outgroup.Ancestral.txt) 
+#                            572,101 are Derived (Output.Outgroup.Derived.txt)
 ###########################################################################################################
 
 
