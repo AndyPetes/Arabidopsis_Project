@@ -38,7 +38,7 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 * [Transform.EST.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Transform.EST.py) generate nucleotide counts at all variant positions in the thaliana data, not just at the variant alignment positions, which was performed above.
 * [Outgroup.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Outgroup.py) details what positions are non-applicable, ancestral or dervived, dependent on the ancestral allele probabilities outputted by the EST program.
 * [Out_Estimate_State.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Out_Estimate_State.py) extracts the allele nucleotide and state (derived or ancestral) at each position for each sample used.
-* [Specific_Allele_Count.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Specific_Allele_Count.py counts number of derived and ancestral alleles in each inidiviudal file in accordance with the ancestral probabilities previously generated.
+* [Specific_Allele_Count.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Specific_Allele_Count.py) counts number of derived and ancestral alleles in each inidiviudal file in accordance with the ancestral probabilities previously generated.
 
 ***
 
