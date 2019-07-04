@@ -58,22 +58,28 @@ python Outgroup.py Updated1001.txt ThLyHaNa/AllLocThLyHaSa.txt ../EST.Loc.Input 
 
 #Combines data from all files, identifying the whether the major allele at each site is ancestral
 #or derived.
-python Out_Estimate_State.py > NewAllLocations.txt
+python Out_Estimate_State.py > Output.txt
 
 #Extract the locations whereby all files agree
-#grep "same" NewAllLocations.txt > NewAllLocations.same.txt
+#grep "same" Output.txt | wc -l
+
+#Extract the lines with at least 1 Outgroup
+#grep -v "No_Outgroup" > Output.Outgroup.txt
 
 #Extract the Derived entries
-#grep "Derived" NewAllLocations.same.txt > NewAllLocations.same.derived.txt
+#grep "Derived" Output.txt > Output.Derived.txt
+#grep "Derived" Output.Outgroup.txt > Output.Outgroup.Derived.txt
+
 
 #Extract the Ancestral entries
-#grep "Ancestral" NewAllLocations.same.txt > NewAllLocations.same.ancestral.txt
+#grep "Ancestral" Output.txt > Output.Ancestral.txt
+#grep "Ancestral" Output.Outgroup.txt > Output.Outgroup.Ancestral.txt
 
 ###########################################################################################################
 #Stats: Using All Locations: 10,707,430 in total
-#                            10,707,430 of these had the same alleles across the 4 samples (NewAllLocations.same.txt)
-#               Of the same: 10,105,460 are Ancestral and (NewAllLocations.same.ancestral.txt)     
-#                            601,970 are Derived (NewAllLocations.same.derived.txt)
+#                            10,707,430 of these had the same alleles across the 4 samples (Output.txt)
+#               Of the same: 10,105,460 are Ancestral and      
+#                            601,970 are Derived
 #
 
 #Stats: Using All Locations with at least 1 Outgroup: 7,682,710 in total
