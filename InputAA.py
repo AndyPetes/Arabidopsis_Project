@@ -3,15 +3,13 @@
 # 3 > ThLyHaPe.Allele.Output
 #Input Files:
 #sys.argv[1] = Updated1001.txt
-#sys.argv[2] = AllLocThLyHaPe.txt
-#sys.argv[3] = EST.Loc.Thal.Lyr.Hall.Per.txt
-#sys.argv[4] = Number of Outgroups (i.e. 2 or 3)
+
 import sys
 
 Ancestral = {}
 Derived = {}
 
-with open("/data4/apeters/Arabidopsis/EST_Output/Python_Script/Output.Outgroup.txt","r") as IN:
+with open("Output.Outgroup.txt","r") as IN:
         for line in IN:
                 fields = line.strip("\n").split("\t")
                 Location = fields[1]
