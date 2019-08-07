@@ -37,8 +37,9 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 * [reformat2.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/reformat2.py) outputs all recurring positions, using the unique positions as a dictionary.
 * [Transform.EST.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Transform.EST.py) generate nucleotide counts at all variant positions in the thaliana data, not just at the variant alignment positions, which was performed above.
 * [Outgroup.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Outgroup.py) details what positions are non-applicable, ancestral or dervived, dependent on the ancestral allele probabilities outputted by the EST program.
-* [Out_Estimate_State.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Out_Estimate_State.py) extracts the allele nucleotide and state (derived or ancestral) at each position for each sample used.
-* [Specific_Allele_Count.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Specific_Allele_Count.py) counts number of derived and ancestral alleles in each inidiviudal file in accordance with the ancestral probabilities previously generated.
+* [Out_Estimate_State.Ancestral.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Out_Estimate_State.Ancestral.py) extracts the allele nucleotide and ancestral state at each position for each sample used.
+* [Out_Estimate_State.Derived.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Out_Estimate_State.Derived.py) extracts the allele nucleotide and derived state at each position for each sample used.
+* [Specific_Allele_Count.prac.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Specific_Allele_Count.prac.py) counts number of derived and ancestral alleles in each inidiviudal file in accordance with the ancestral probabilities previously generated.
 * [InputAA.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/InputAA.py) Uses the output from "Out_Estimate_State.py" to create a text file with output compatabile with the "AA" field in a VCF file.
 * [FinalAA.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/FinalAA.py) uses the output just generated and inputs this information into the 100.Updated.vcf file
 
