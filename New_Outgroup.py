@@ -50,14 +50,14 @@ with open(sys.argv[3],"r") as IN:
                      Loc = fields[0]
                      Prob = Allele_Prob[Loc]
                      Alt_Prob = 1 - float(Allele_Prob[Loc])
-                     if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and float(Prob) >= 0.525:
+                     if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and float(Prob) >= 0.99:
                          print(Loc + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Ancestral" + "\t" + "No_Outgroup" + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Derived")
-                     elif Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and float(Prob) <= 0.475:
+                     elif Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and float(Prob) <= 0.01:
                          print(Loc + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Ancestral" + "\t" + "No_Outgroup" + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Derived")
-                     elif float(Prob) >= 0.525:
+                     elif float(Prob) >= 0.99:
                          print(Loc + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Ancestral" + "\t" + "Yes_Outgroup" + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Derived")
-                     elif float(Prob) <= 0.475:
-                         print(Loc + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Ancestral" + "\t" + "Yes_Outgroup" +	"\t" +Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Derived")
+                     elif float(Prob) <= 0.01:
+                         print(Loc + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Ancestral" + "\t" + "Yes_Outgroup" + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Derived")
                 if sys.argv[4] == "3":
                      fields = line.strip("\n").split("\t")
                      Outgroup1 = fields[-3]
@@ -66,11 +66,11 @@ with open(sys.argv[3],"r") as IN:
                      Loc = fields[0]
                      Prob = Allele_Prob[Loc]
                      Alt_Prob = 1 - float(Allele_Prob[Loc])
-                     if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0" and float(Prob) >= 0.525:
+                     if Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0" and float(Prob) >= 0.99:
                          print(Loc + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Ancestral" + "\t" + "No_Outgroup" + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Derived")
-                     elif Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0" and float(Prob) <= 0.475:
+                     elif Outgroup1 == "0,0,0,0" and Outgroup2 == "0,0,0,0" and Outgroup3 == "0,0,0,0" and float(Prob) <= 0.01:
                          print(Loc + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Ancestral" + "\t" + "No_Outgroup" + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Derived")
-                     elif float(Prob) >= 0.525:
+                     elif float(Prob) >= 0.99:
                          print(Loc + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Ancestral" + "\t" + "Yes_Outgroup" + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Derived")
-                     elif float(Prob) <= 0.475:
+                     elif float(Prob) <= 0.01:
                          print(Loc + "\t" + Dic_Minor[Loc] + "\t" + str(Alt_Prob) + "\t" + "Ancestral" + "\t" + "Yes_Outgroup" + "\t" + Dic_Major[Loc] + "\t" + str(Prob) + "\t" + "Derived")
