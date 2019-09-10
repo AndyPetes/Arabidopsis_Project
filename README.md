@@ -30,6 +30,7 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 ***
 
 ### Protocol - Python Scripts
+#### EST Program Data Manipulation
 * [Loc_Ancestral.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Loc_Ancestral.py) takes Arabidopsis VCF Data and outputs it in a readable format for the EST program.
 * [MAF.Species.Tab.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/MAF.Species.Tab.py) generates nucleotide counts based on alignments (MAF files) between thaliana and an outgroup species.
 * [get_uniq.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/get_uniq.py) outputs the genomic locations and associated nucleotide that occur exactly once after alignment, i.e. unique positions.
@@ -39,7 +40,11 @@ This directory contains python scripts and bash scripts that demonstrate how to 
 * [New_Outgroup.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/New_Outgroup.py) details what positions are non-applicable, ancestral or dervived, dependent on the ancestral allele probabilities outputted by the EST program.
 * [Out_Estimate_State.Ancestral.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Out_Estimate_State.Ancestral.py) extracts the allele nucleotide and ancestral state at each position for each sample used.
 * [Out_Estimate_State.Derived.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Out_Estimate_State.Derived.py) extracts the allele nucleotide and derived state at each position for each sample used.
+#### Align Method Data Manipulation
+* [Lyrata.upd.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Lyrata.upd.py) extracts information from Lyrata and Halleri aligned nucleotides for alignment Method.
+#### GWAS
 * [Specific_Allele_Count.prac.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/Specific_Allele_Count.prac.py) counts number of derived and ancestral alleles in each inidiviudal file in accordance with the ancestral probabilities previously generated.
+#### Genome Scan Window
 * [InputAA.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/InputAA.py) Uses the output from "Out_Estimate_State.py" to create a text file with output compatabile with the "AA" field in a VCF file.
 * [FinalAA.py](https://github.com/AndyPetes/Arabidopsis_Project/blob/master/FinalAA.py) uses the output just generated and inputs this information into the 100.Updated.vcf file
 
